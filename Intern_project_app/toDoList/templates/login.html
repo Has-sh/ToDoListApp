@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+{%load static%}
+
+<style>
+
+body {
+    background-image: url('{% static 'img/login.jpg' %}');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.login-page {
+    padding: 20% 0;
+}
+
+.login-container {
+    max-width: 450px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: #444444;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-form label {
+    color: white;
+}
+
+.login-form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.error-message {
+    color: #d9534f;
+    margin-top: 10px;
+}
+
+.error {
+    color: #d9534f;
+    margin-top: 5px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.forgot-password {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    color: #007bff;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        padding: 15px;
+    }
+
+    .btn-primary.btn-block {
+        margin-top: 10px;
+    }
+}
+</style>
+
+<div class="login-page">
+<div class="login-container">
+    <form method="POST" class="login-form">
+        {% csrf_token %}
+        <h3 align="center" style="color: white;">Login</h3>
+        {% if form.errors %}
+            <p class="error-message">Please correct the errors below.</p>
+        {% endif %}
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" name="username" placeholder="Enter username">
+            {% if form.username.errors %}
+                <p class="error">{{ form.username.errors }}</p>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" placeholder="Enter password">
+            {% if form.password.errors %}
+                <p class="error">{{ form.password.errors }}</p>
+            {% endif %}
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 10px;">
+                <label style="margin: 0;">
+                    <input type="checkbox" name="remember_me"> Remember Me
+                </label>
+                <a href="{% url 'reset_password' %}" class="forgot-password" style="color:white;">Forgot Password?</a>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary btn-block" style="background-color: #666666; color: white;">Login</button>
+        </div>
+    </form>
+</div>
+</div>
+{% endblock %}
