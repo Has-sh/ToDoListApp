@@ -1,5 +1,4 @@
-#To Do List
-
+# To-Do list
 1) Web Application To do list app
 
 2) For multiple people 
@@ -26,9 +25,8 @@
 
 13) List an be shared as posts (fb, Linkedin, twitter, etc)
 
-#How to Run
+# How to run
 install all the requriements from requirments.txt
 cd internship
 cd Intern_project_app
-#run
 python manage.py runserver
