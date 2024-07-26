@@ -27,6 +27,5 @@
 
 # How to run
 install all the requriements from requirments.txt
-1) cd internship
-2) cd Intern_project_app
-3) python manage.py runserver
+1) cd Intern_project_app
+2) python manage.py runserver
