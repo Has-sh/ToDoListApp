@@ -1,4 +1,4 @@
-To Do List
+#To Do List
 
 1) Web Application To do list app
 
@@ -25,3 +25,10 @@ To Do List
 12) if the person, that you are sharing your list with is not on the tode app you will invite them and when they join, they can see the shared list
 
 13) List an be shared as posts (fb, Linkedin, twitter, etc)
+
+#How to Run
+install all the requriements from requirments.txt
+cd internship
+cd Intern_project_app
+#run
+python manage.py runserver
