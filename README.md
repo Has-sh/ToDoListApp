@@ -59,17 +59,21 @@ Registers the models with the Django admin site for easy management.
     ```
 2. Navigate to the project directory:
     ```bash
-    cd ToDoListApp/Intern_project_app
+    cd ToDoListApp
     ```
 3. Install the dependencies:
     ```bash
     pip install -r requirements.txt
     ```
-4. Run the migrations:
+4. Navigate to the File directory:
+    ```bash
+    cd Intern_project_app
+    ```
+6. Run the migrations:
     ```bash
     python manage.py migrate
     ```
-5. Start the development server:
+7. Start the development server:
     ```bash
     python manage.py runserver
     ```
