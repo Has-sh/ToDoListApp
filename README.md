@@ -57,7 +57,7 @@ Registers the models with the Django admin site for easy management.
     ```
 2. Navigate to the project directory:
     ```bash
-    cd Intern_project_app
+    cd ToDoListApp/Intern_project_app
     ```
 3. Install the dependencies:
     ```bash
