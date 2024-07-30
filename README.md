@@ -53,7 +53,7 @@ Registers the models with the Django admin site for easy management.
 ### Installation
 1. Clone the repository:
     ```bash
-    git clone <repository_url>
+    git clone https://github.com/Has-sh/ToDoListApp.git
     ```
 2. Navigate to the project directory:
     ```bash
