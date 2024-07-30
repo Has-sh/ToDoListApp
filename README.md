@@ -1,4 +1,4 @@
-# ToDo List Web Application
+# To-Do List Web Application
 
 This project is a comprehensive web application designed to manage to-do lists efficiently. It allows users to create personal and shared tasks, ensuring that all task management needs are met with robust features such as user authentication, email notifications, and social sharing capabilities. The application is built using Django and incorporates various functionalities to enhance the user experience.
 
