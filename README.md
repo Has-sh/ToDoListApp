@@ -1,31 +1,83 @@
-# Project Requirement
-1) Web Application To do list app
+# ToDo List Web Application
 
-2) For multiple people 
+## Project Requirements
+This project is a web application for managing to-do lists. The main features include:
 
-3) You can view only your List - personal
+- **Personal and Shared Lists**: Users can view only their personal lists but have the ability to share lists with others.
+- **User Authentication**: Includes login, signup with email verification, and single sign-on functionality.
+- **Task Management**: Users can create, delete, and manage tasks with due dates, descriptions, titles, and creation dates.
+- **Email Notifications**: Users receive email reminders for tasks due soon.
+- **CAPTCHA**: Ensures valid task creation through CAPTCHA verification.
+- **Social Sharing**: Tasks can be shared on social media platforms such as Facebook, LinkedIn, and Twitter.
 
-4) lists be shared 
+## Features
 
-5) Backend encrypted.
+### User Authentication
+- **Signup**: Users can sign up with their email, username, and password. An email with an activation link is sent for account verification.
+- **Login**: Users can log in with their credentials. Option to remember the user or expire the session on browser close.
+- **Logout**: Users can log out of their accounts.
 
-6) Login and enter
+### Task Management
+- **Create Task**: Users can create tasks with a title, description, and due date. CAPTCHA verification ensures valid submissions.
+- **Delete Task**: Users can delete their tasks.
+- **Share Task**: Users can share tasks with others through unique tokens. Shared tasks can be copied to the recipient's list.
 
-7) signup feature email, auth code, password (single sign on)
+### Email Notifications
+- **Due Date Reminder**: An email reminder is sent to users a day before the task's due date.
 
-8) delete your tasks, tasks are to have due date, description, title and creation date.
+## Code Structure
 
-9) If the due clate of the last is near by, the user will recieve email
+### `views.py`
+Handles the main functionality of the application, including user authentication, task management, and email notifications.
 
-10) Captch for creating a list/task 
+### `tokens.py`
+Defines a custom token generator for account activation.
 
-11) Tasks can be shared and assigned to the person the list is being shared with
+### `scheluder.py`
+Sets up a scheduler to send email reminders for tasks due the next day.
 
-12) if the person, that you are sharing your list with is not on the tode app you will invite them and when they join, they can see the shared list
+### `models.py`
+Defines the database models for `Note` and `SharedNote`.
 
-13) List an be shared as posts (fb, Linkedin, twitter, etc)
+### `admin.py`
+Registers the models with the Django admin site for easy management.
 
-# How to run
-install all the requriements from requirments.txt
-1) cd Intern_project_app
-2) python manage.py runserver
+## Getting Started
+
+### Prerequisites
+- Python 3.x
+- Django
+- Django-APScheduler
+- Django-ReCaptcha
+
+### Installation
+1. Clone the repository:
+    ```bash
+    git clone <repository_url>
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd todo-list-app
+    ```
+3. Install the dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+4. Run the migrations:
+    ```bash
+    python manage.py migrate
+    ```
+5. Start the development server:
+    ```bash
+    python manage.py runserver
+    ```
+
+### Configuration
+1. Set up the email backend in `settings.py` for sending email notifications.
+2. Configure ReCaptcha keys in `settings.py`.
+
+## Usage
+1. Navigate to the signup page and create a new account.
+2. Log in to your account.
+3. Create, delete, and share tasks.
+4. Receive email reminders for tasks due soon.
