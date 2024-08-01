@@ -71,6 +71,7 @@ Registers the models with the Django admin site for easy management.
     ```
 6. Run the migrations:
     ```bash
+    python manage.py makemigrations toDoList
     python manage.py migrate
     ```
 7. Start the development server:
