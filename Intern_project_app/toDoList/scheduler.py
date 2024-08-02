@@ -41,6 +41,11 @@ def start_scheduler():
     scheduler = BackgroundScheduler()
     scheduler.add_jobstore(DjangoJobStore(), "default")
     
+    try:
+        scheduler.remove_all_jobs()
+    except Exception as e:
+        logger.exception("An error occurred while clearing jobs: %s", str(e))
+    
     unique_job_id = str(uuid.uuid4())
 
     try:
