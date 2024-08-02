@@ -1,4 +1,5 @@
 from django.apps import AppConfig
+import sys
 
 
 class TodolistConfig(AppConfig):
@@ -6,5 +7,6 @@ class TodolistConfig(AppConfig):
     name = 'toDoList'
     
     def ready(self):
-        from .scheduler import start_scheduler
-        start_scheduler()
+        if 'runserver' in sys.argv or 'uwsgi' in sys.argv:
+            from .scheduler import start_scheduler
+            start_scheduler()
